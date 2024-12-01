@@ -43,7 +43,7 @@ jobs:
 
       # 下载待修补的应用
       - name: 下载指定版本的QQ
-        run: wget -O QQ-custom.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.0_64.apk
+        run: wget -O QQ-custom.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.5_64.apk
 
       # 使用GitHub CLI下载模块最新Release版本
       - name: 下载模块
