@@ -50,10 +50,9 @@ jobs:
         run: |
           gh release download -O QAuxiliary.apk --repo cinit/QAuxiliary     --pattern '*arm64.apk'
           gh release download -O XAutoDaily.apk --repo LuckyPray/XAutoDaily --pattern '*.apk'
-          gh release download -O QQCleaner.apk  --repo KitsunePie/QQCleaner --pattern '*.apk'
 
       # 修补
-      - run: java -jar LSPatch.jar QQ-custom.apk -m QAuxiliary.apk,XAutoDaily.apk,QQCleaner.apk -l 2
+      - run: java -jar LSPatch.jar QQ-custom.apk -m QAuxiliary.apk,XAutoDaily.apk -l 2
 
       # 发布Release以便下载
       #- name: 发布Release
