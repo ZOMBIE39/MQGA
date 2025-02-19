@@ -42,7 +42,7 @@ jobs:
 
       - name: Download Custom QQ 下载自定义版本QQ
       # 官方直链：https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
-        run: wget -O QQ-custom.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
+        run: wget -O QQ-9.1.10.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
 
       - name: Download Latest QQ 下载最新版QQ
         run: |
@@ -65,12 +65,11 @@ jobs:
         run: |
           gh release download -O QAuxiliary.apk --repo cinit/QAuxiliary     --pattern '*arm64.apk'
           gh release download -O XAutoDaily.apk --repo LuckyPray/XAutoDaily --pattern '*.apk'
-          gh release download -O TSBattery.apk  --repo fankes/TSBattery     --pattern '*.apk'
           gh release download -O QQCleaner.apk  --repo KitsunePie/QQCleaner --pattern '*.apk'
 
       # 开始修补QQ
       - name: Patch QQ 修补各版本QQ
-        run: java -jar LSPatch.jar QQ-*.apk -m QAuxiliary.apk,XAutoDaily.apk,TSBattery.apk,QQCleaner.apk -l 2
+        run: java -jar LSPatch.jar QQ-*.apk -m QAuxiliary.apk,XAutoDaily.apk,QQCleaner.apk -l 2
 
       # 获取模块版本信息
       - id: QAuxiliary
@@ -83,12 +82,6 @@ jobs:
         uses: pozetroninc/github-action-get-latest-release@v0.7.0
         with:
           repository: LuckyPray/XAutoDaily
-          excludes: prerelease, draft
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - id: TSBattery
-        uses: pozetroninc/github-action-get-latest-release@v0.7.0
-        with:
-          repository: fankes/TSBattery
           excludes: prerelease, draft
           token: ${{ secrets.GITHUB_TOKEN }}
       - id: QQCleaner
@@ -120,7 +113,6 @@ jobs:
             | ------- | -------- | ------- |
             | QAuxiliary | ${{ steps.QAuxiliary.outputs.release }} | [点击跳转](https://github.com/cinit/QAuxiliary) |
             | XAutoDaily | ${{ steps.XAutoDaily.outputs.release }} | [点击跳转](https://github.com/LuckyPray/XAutoDaily) |
-            | TSBattery  | ${{ steps.TSBattery.outputs.release }}  | [点击跳转](https://github.com/fankes/TSBattery) |
             | QQCleaner  | ${{ steps.QQCleaner.outputs.release }}  | [点击跳转](https://github.com/KitsunePie/QQCleaner) |
 
             <details><summary>点击展开模块更新详情</summary>
@@ -128,8 +120,6 @@ jobs:
             ${{ steps.QAuxiliary.outputs.description }}
             #### XAutoDaily
             ${{ steps.XAutoDaily.outputs.description }}
-            #### TSBattery
-            ${{ steps.TSBattery.outputs.description }}
             #### QQCleaner
             ${{ steps.QQCleaner.outputs.description }}
             #### [LSPatch](https://github.com/LSPosed/LSPatch)版本：${{ steps.LSPatch.outputs.release }}
