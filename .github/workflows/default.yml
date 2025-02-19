@@ -38,11 +38,11 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '17'
+          java-version: '21'
 
       - name: Download Custom QQ 下载自定义版本QQ
-      # 官方直链：https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_8.9.58_64_HB2.apk
-        run: gh release download -O QQ-8.9.58.apk --repo Hakuin123/MQGA READY --pattern QQ_8.9.58_64_HB2.apk
+      # 官方直链：https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
+        run: wget -O QQ-custom.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
 
       - name: Download Latest QQ 下载最新版QQ
         run: |
