@@ -42,7 +42,7 @@ jobs:
 
       - name: Download Custom QQ 下载自定义版本QQ
       # 官方直链：https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
-        run: wget -O QQ-9.1.0.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.0_64.apk
+        run: wget -O QQ-9.1.10.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.10_64.apk
 
       - name: Download Latest QQ 下载最新版QQ
         run: |
@@ -122,4 +122,4 @@ jobs:
             ${{ steps.XAutoDaily.outputs.description }}
             #### QQCleaner
             ${{ steps.QQCleaner.outputs.description }}
-            #### [LSPatch](https://github.com/LSPosed/LSPatch)版本：${{ steps.LSPatch.outputs.release }}
+            #### [LSPatch](https://github.com/JingMatrix/LSPatch)版本：${{ steps.LSPatch.outputs.release }}
