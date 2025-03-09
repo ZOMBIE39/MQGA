@@ -180,11 +180,11 @@ jobs:
             ### 本次修补使用的项目（不含自定义 QQ 版本）
             | 项目名称 | 对应版本 | 查看项目 |
             | ------- | -------- | ------- |
-            | QQ 最新版本 | ${{ needs.check-updates.outputs.QQ_version }}         | [QQ 官网](https://im.qq.com/index)|
+            | QQ 最新版本 | ${{ needs.check-updates.outputs.QQ_version }}         | [QQ 官网](https://im.qq.com/index) |
             | QAuxiliary | ${{ needs.check-updates.outputs.QAuxiliary_version }} | [GitHub](https://github.com/cinit/QAuxiliary) |
             | XAutoDaily | ${{ needs.check-updates.outputs.XAutoDaily_version }} | [GitHub](https://github.com/LuckyPray/XAutoDaily) |
             | QQCleaner  | ${{ needs.check-updates.outputs.QQCleaner_version }}  | [GitHub](https://github.com/KitsunePie/QQCleaner) |
-            | LSPatch    | ${{ needs.check-updates.outputs.LSPatch_version }}    | [GitHub](https://github.com/JingMatrix/LSPatch)]
+            | LSPatch    | ${{ needs.check-updates.outputs.LSPatch_version }}    | [GitHub](https://github.com/JingMatrix/LSPatch) |
 
             <details><summary>点击展开模块更新日志</summary>
             #### QAuxiliary<br>
