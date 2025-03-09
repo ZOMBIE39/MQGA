@@ -133,7 +133,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       # 下载版本记录资源
       - uses: actions/download-artifact@v4
