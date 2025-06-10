@@ -169,7 +169,8 @@ jobs:
       - name: Download Custom QQ 下载自定义 QQ 版本
         if: ENV.CUSTOM_ENABLE == 'true'
         run: |
-          wget -q -U "Mozilla/5.0" -O QQ-custom.apk "${{ ENV.CUSTOM_QQ_DOWNLOAD_LINK }}"
+          wget -O QQ-9.1.25.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.25_64.apk
+          wget -O QQ-9.1.50.apk https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_9.1.50_64.apk
         # gh release download -O QQ-8.9.58.apk --repo Hakuin123/MQGA READY --pattern QQ_8.9.58_64_HB2.apk
         # 可以更改此处以自定义需要修补的 QQ 版本，可以添加多个（统一打包并上传）
 
