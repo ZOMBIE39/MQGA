@@ -173,9 +173,13 @@ jobs:
             $(curl -s -X POST -H "Content-Type: application/json" -d '{"packagename":"com.tencent.mobileqq"}' \
             https://upage.html5.qq.com/wechat-apkinfo | tr -cd '[:print:]' | jq -r '.app_detail_records."com.tencent.mobileqq".apk_all_data.url')
 
-      # 下载LSPatch
+      # 下载LSPatch（修复版）
       - name: Download LSPatch 下载LSPatch
-        run: gh release download -O LSPatch.jar --repo ${{ ENV.CUSTOM_LSPATCH_REPO }} --pattern '*.jar'
+        run: |
+          # 仅下载 LSPatch 核心jar（唯一匹配，无冲突）
+          gh release download --repo ${{ env.CUSTOM_LSPATCH_REPO }} --pattern 'LSPatch-*.jar'
+          # 重命名为固定名称，方便后续调用
+          mv LSPatch-*.jar LSPatch.jar
 
       # 下载模块
       - name: Download Modules 下载模块
