@@ -196,7 +196,7 @@ jobs:
 
       # 下载 LSPatch
       - name: Download LSPatch | 下载 LSPatch
-        run: gh release download -O LSPatch.jar --repo ${{ ENV.LSPATCH_REPO }} --pattern '*.jar'
+        run: gh release download -O LSPatch.jar --repo ${{ ENV.LSPATCH_REPO }} --pattern 'lspatch.jar'
 
       - name: Download Preset Modules | 下载预设模块
         run: |
