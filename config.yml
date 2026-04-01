@@ -15,7 +15,7 @@ modules:
   # 将值设为 true 来启用模块，设为 false 则禁用
   QAuxiliary: true
   XAutoDaily: true
-  TSBattery: true
+  TSBattery: false
   QQCleaner: false
 
   # --- 自定义模块 ---
